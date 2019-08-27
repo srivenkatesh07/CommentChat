@@ -7,7 +7,7 @@ const route = require('./routers/route');
 const loginid = require('./routers/loginid'); 
 var app = express();
 
-mongoose.connect('mongodb+srv://api:api>@cluster0-c8523.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://api:api@cluster0-c8523.mongodb.net/test?retryWrites=true&w=majority');
 mongoose.connection.on('connected',function(){
 console.log('connected to dadabase mongo @ 27017');
 });
