@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser= require('body-parser');
 const path =require('path');
-const cool= require('cool-ascii-faces');
 var mongoose=require('mongoose');
 var cors = require('cors');
 const route = require('./routers/route'); 
