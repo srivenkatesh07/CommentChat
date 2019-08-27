@@ -11,7 +11,7 @@ const routes: Routes = [{path:'',redirectTo:'login',pathMatch:'full'},
 {path:'homepage',component:HomepageComponent,canActivate:[AuthGuard]},];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
