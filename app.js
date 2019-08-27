@@ -34,7 +34,7 @@ app.use(express.static(__dirname+'/dist'));
 
 app.get('/*',function(req, res){
     console.log('consol listening');
-    res.sendFile(path.join(__dirname , '/login/login.component.html'));
+    res.sendFile(path.join(__dirname , '/src/index.html'));
 });
 
 app.listen(port,function(){
