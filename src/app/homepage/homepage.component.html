@@ -24,7 +24,7 @@
   </div>
 
 
-  <div *ngIf="!comments?.length > 0">
+  <div *ngIf="!comments && (comments.length > 0)">
     <h1 align="center"> No data found</h1>
   </div>
 

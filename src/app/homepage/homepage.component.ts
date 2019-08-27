@@ -29,8 +29,8 @@ export class HomepageComponent implements OnInit {
 
   });
 
-  subcommentdata = {};
-  commentdata = {};
+  subcommentdata = <any>{};
+  commentdata = <any>{};
 
   submitcomment() {
     if (!this.commentform.valid) {
