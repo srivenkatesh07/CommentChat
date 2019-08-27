@@ -32,7 +32,7 @@ app.use('/api',route,loginid);
 
 app.use(express.static(__dirname+'/dist'));
 
-app.get('/*',function(req, res){
+app.get('/',function(req, res){
     console.log('consol listening');
     res.sendFile(path.join(__dirname , '/src/index.html'));
 });
