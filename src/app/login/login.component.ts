@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     user_name: new FormControl(null, [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]),
     password: new FormControl(null, [Validators.required])
   });
-  logindata = {}
+  logindata = <any>{}
   constructor(public dialog: MatDialog, public router: Router, public LoglistService: LoglistService) { }
 
   ngOnInit() {
