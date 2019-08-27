@@ -1,0 +1,118 @@
+<div>
+  <mat-toolbar>
+    <span>What I did interesting today!!!</span>
+  </mat-toolbar>
+
+
+
+  <div class="example-container">
+    <mat-card class="my-card">
+      <form [formGroup]="commentform" class="my-card">
+
+        <mat-form-field>
+          <textarea [(ngModel)]='commentdata.comment' name="comment" formControlName="comment" matInput
+           placeholder="Type your content here"></textarea>
+        </mat-form-field>
+
+        <mat-card-actions align="end" class="Submit">
+          <button mat-raised-button *ngIf="LoglistService.loggedin()" (click)="submitcomment()"
+            color="primary">Submit</button>
+        </mat-card-actions>
+
+      </form>
+    </mat-card>
+  </div>
+
+
+  <div *ngIf="!comments?.length > 0">
+    <h1 align="center"> No data found</h1>
+  </div>
+
+  <div *ngFor="let comments of comments">
+    <mat-card class="my-card">
+      <form [formGroup]="subcommentform" class="my-card">
+
+        <h1> <span class="badge"
+            matBadge={{comments.first_name.charAt(0).toUpperCase()+comments.last_name.charAt(0).toUpperCase()}}
+            matBadgePosition="before" matBadgeSize="large" matBadgeOverlap="false"> </span> {{comments.first_name}}
+          {{comments.last_name}}</h1>
+        <mat-card-content class="commentspace">
+
+          <h3> {{comments.comment}}</h3>
+
+        </mat-card-content>
+
+
+
+
+        <mat-card-actions>
+
+          <h5> {{comments.date | dateAgo}}
+            <span class="align">
+              <button (click)="likecount(comments._id,comments.first_name,comments.like_count,comments.comment)"> <img id="like"
+                  src="assets/like.png" /> </button>{{comments.like_count}}
+
+
+              <img id="chat" src="assets/chat.png" /> {{comments.comment_count}} comments
+            </span> </h5>
+          <div class="subcomment">
+            <mat-accordion>
+              <mat-expansion-panel class="name">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3><b>COMMENT</b></h3>
+
+                  </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <mat-form-field class="my-card">
+                  <input  formControlName="subcomment" [(ngModel)]='subcommentdata.subcomment' name="subcomment" matInput
+                    placeholder="type your comment">
+                </mat-form-field>
+                <mat-card-actions align="end" class="Submit">
+                  <button
+                    (click)="subcomment(comments._id,comments.comment_count,comments.comment,comments.first_name,comments.last_name)">
+                    submit</button>
+                </mat-card-actions>
+                <div *ngFor="let subcomments of subcomments">
+                  <div *ngIf="comments.comment==subcomments.postcomment">
+                    <mat-card class="subcomment">
+                      <span matBadgePosition="above before"
+                        matBadge={{subcomments.user_name.charAt(0).toUpperCase()+subcomments.last_name.charAt(0).toUpperCase()}}
+                        matBadgeOverlap="false">
+                        <h1> {{subcomments.user_name}} {{subcomments.last_name}} </h1>
+                      </span>
+                      <mat-card-content>
+
+                        &#9; <h3> {{subcomments.comment}}</h3>
+
+
+
+                        <h5> {{subcomments.date | dateAgo}}
+
+                          <span class="align"> <button
+                              (click)="sublikecount(subcomments._id,subcomments.user_name,subcomments.like_count,subcomments.comment)">
+                              <img id="like" src="assets/like.png" /> </button>{{subcomments.like_count}}</span>
+                        </h5>
+                      </mat-card-content>
+
+                    </mat-card>
+
+                  </div>
+                </div>
+              </mat-expansion-panel>
+
+            </mat-accordion>
+          </div>
+
+
+        </mat-card-actions>
+      </form>
+    </mat-card>
+
+  </div>
+
+
+
+</div>

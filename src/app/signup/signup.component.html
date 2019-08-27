@@ -1,0 +1,65 @@
+<div>
+  <mat-toolbar>
+    <span>Registration</span>
+  </mat-toolbar>
+  <mat-card class="my-card">
+    <mat-card-content>
+      <form [formGroup]="signupForm" class="my-form">
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input formControlName="user_name" matInput placeholder="Email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" formControlName="password" matInput placeholder="password">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" formControlName="re_password" matInput placeholder="Confirm password">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Mobile No</mat-label>
+          <input formControlName="phone_no" matInput placeholder="Mobile no">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>First Name</mat-label>
+          <input formControlName="first_name" matInput placeholder="first name">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Last Name</mat-label>
+          <input formControlName="last_name" matInput placeholder="last name">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Address</mat-label>
+          <input formControlName="address" matInput placeholder="address">
+        </mat-form-field>
+
+
+        <section class="example-section">
+          <label class="example-margin">Gender:</label>
+
+          <mat-radio-group formControlName="gender" name="gender">
+            <mat-radio-button class="example-margin" value="Male">Male</mat-radio-button>
+            <mat-radio-button class="example-margin" value="Female">Female</mat-radio-button>
+            <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <mat-form-field class="full-width">
+          <mat-label>DOB</mat-label>
+          <input formControlName="dob" matInput [matDatepicker]="matDatepicker" placeholder="Choose a date">
+          <mat-datepicker-toggle [for]="matDatepicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #matDatepicker></mat-datepicker>
+        </mat-form-field>
+
+
+  
+        
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="signup()" color="primary">REGISTER</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

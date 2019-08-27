@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+    <span class="spacer"></span>
+    <a *ngIf="!LoglistService.loggedin()" mat-button routerLink="/signup">Register</a>
+    <a *ngIf="!LoglistService.loggedin()" mat-button routerLink="/login">Login</a>
+    <a *ngIf="LoglistService.loggedin()" (click)="LoglistService.logoutuser()" mat-button>Logout</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
