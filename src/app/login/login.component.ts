@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.LoglistService.login(this.logindata)
         .subscribe(
           res => {
-            console.log(res)
+           
 
             localStorage.setItem('token', JSON.stringify(res));
             this.router.navigateByUrl('/homepage');

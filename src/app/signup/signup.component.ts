@@ -56,7 +56,8 @@ export class SignupComponent implements OnInit {
       this.LoglistService.signup(JSON.stringify(this.signupForm.value))
         .subscribe(
           res => {
-            console.log('data created');
+            this.dialog.open(DialogExanpleComponent, { data: { Error: "Registered Successfully " } });
+
             this.router.navigate(['/login']);
           },
           error => {

@@ -53,6 +53,8 @@ export class HomepageComponent implements OnInit {
               .subscribe(
                 res => {
                   this.commentform.reset();
+                  this.dialog.open(DialogExanpleComponent, { data: { Error: "Comment Updated Successfully" } });
+
                   this.UserdatalistService.usercommentDisplay().subscribe(res => { this.comments = <any>res },
                     err => {
 
@@ -65,7 +67,7 @@ export class HomepageComponent implements OnInit {
                       console.log(err)
 
                     });
-                  console.log(res)
+                 
                 },
                 err => {
                   console.log(err)
@@ -101,7 +103,7 @@ export class HomepageComponent implements OnInit {
                   console.log(err)
 
                 });
-              console.log(res)
+            
             });
 
           } else {
@@ -137,7 +139,7 @@ export class HomepageComponent implements OnInit {
                   console.log(err)
 
                 });
-              console.log(res)
+              
             });
           } else {
             this.dialog.open(DialogExanpleComponent, { data: { Error: "You cannot like your own post" } });
@@ -172,13 +174,15 @@ export class HomepageComponent implements OnInit {
             };
             
 
-            this.UserdatalistService.commentupdate(myObj).subscribe(res => { console.log(res) });
+            this.UserdatalistService.commentupdate(myObj).subscribe(res => { res });
 
             this.UserdatalistService.subcommentdata(myObj)
               .subscribe(
                 res => {
 
                   this.subcommentform.reset();
+                  this.dialog.open(DialogExanpleComponent, { data: { Error: "Comment Updated Successfully" } });
+
                   this.UserdatalistService.usercommentDisplay().subscribe(res => { this.comments = <any>res },
                     err => {
 
@@ -191,7 +195,8 @@ export class HomepageComponent implements OnInit {
                       console.log(err)
 
                     });
-                  console.log(res)
+                               this.dialog.open(DialogExanpleComponent, { data: { Error: "Comment Updated Successfully" } });
+
                 },
                 err => {
                   console.log(err)
