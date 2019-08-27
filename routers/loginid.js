@@ -44,7 +44,7 @@ login.post('/login', function(request,response){
     loginid.findOne({user_name: request.body.user_name,password:request.body.password},function(err,userdata){
         
         if(err||!userdata){
-res.json(err);
+            response.status(500).send({err});
           //  response.status(500).send({error:"could not find data....."});
         }else{
             //response.json({msg: 'login check sucessfully'});
