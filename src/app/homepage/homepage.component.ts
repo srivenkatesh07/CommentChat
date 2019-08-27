@@ -17,7 +17,7 @@ export class HomepageComponent implements OnInit {
   comments: commentsdata[];
   subcomments: subcommentsdata[];
 
-  constructor(public dialog: MatDialog, private LoglistService: LoglistService, private UserdatalistService: UserdatalistService) { }
+  constructor(public dialog: MatDialog, public LoglistService: LoglistService, public UserdatalistService: UserdatalistService) { }
 
   commentform: FormGroup = new FormGroup({
     comment: new FormControl(null, Validators.required)

@@ -8,7 +8,7 @@ import { LoglistService } from './loglist.service';
 })
 export class AppComponent {
   title = 'commentclient';
-  constructor(private LoglistService:LoglistService) { }
+  constructor(public LoglistService:LoglistService) { }
 
 
 }

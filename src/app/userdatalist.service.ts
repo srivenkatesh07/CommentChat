@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class UserdatalistService {
 
-  constructor(private httpclient:HttpClient,private router:Router) { }
+  constructor(public httpclient:HttpClient,public router:Router) { }
 
   commentdata(data:any){
 

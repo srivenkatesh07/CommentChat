@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
     phone_no: new FormControl(null, [Validators.required, Validators.pattern('[0-9]+'), Validators.minLength(10), Validators.maxLength(10)]),
     dob: new FormControl(null, Validators.required)
   })
-  constructor(public dialog: MatDialog, private router: Router, private LoglistService: LoglistService) { }
+  constructor(public dialog: MatDialog, public router: Router, public LoglistService: LoglistService) { }
 
   ngOnInit() {
   }

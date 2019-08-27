@@ -8,7 +8,7 @@ import { map } from "rxjs/operators";
 })
 export class LoglistService {
 
-  constructor(private httpclient:HttpClient,private router:Router) { }
+  constructor(public httpclient:HttpClient,public router:Router) { }
 
   login(body:any){
     return this.httpclient.post('api/login',body,{headers:new HttpHeaders().append('Content-Type','application/json')}).pipe(map(res => res));
