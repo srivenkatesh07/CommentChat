@@ -32,11 +32,10 @@
     <mat-card class="my-card">
       <form [formGroup]="subcommentform" class="my-card">
 
-        <h1> <span class="badge"
+         <span class="badge"
             matBadge={{comments.first_name.charAt(0).toUpperCase()+comments.last_name.charAt(0).toUpperCase()}}
-            matBadgePosition="before" matBadgeSize="large" matBadgeOverlap="false"> </span> {{comments.first_name}}
-          {{comments.last_name}}</h1>
-        <mat-card-content class="commentspace">
+            matBadgePosition="before" matBadgeSize="large" matBadgeOverlap="false"> </span> <h1> {{comments.first_name}}
+          {{comments.last_name}}</h1>       <mat-card-content class="commentspace">
 
           <h3> {{comments.comment}}</h3>
 
@@ -68,7 +67,7 @@
 
                 <mat-form-field class="my-card">
                   <input  formControlName="subcomment" [(ngModel)]='subcommentdata.subcomment' name="subcomment" matInput
-                    placeholder="type your comment">
+                    placeholder="Type your comment">
                 </mat-form-field>
                 <mat-card-actions align="end" class="Submit">
                   <button
