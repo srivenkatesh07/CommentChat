@@ -4,11 +4,12 @@
   "main": "app.js",
   "scripts": {
     "ng": "ng",
+    "build": "ng build",
     "start": "node app.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod "
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
